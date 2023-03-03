@@ -8,12 +8,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class UserService {
+public class UserServiceImpl implements UserService{
 
     private final UserRepository userRepository;
 
     @Autowired
-    public UserService(UserRepository userRepository) {
+    public UserServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
@@ -26,10 +26,6 @@ public class UserService {
     }
 
     public User saveUser(User user){
-        return userRepository.save(user);
-    }
-
-    public User updateUser(User user, Long id){
         return userRepository.save(user);
     }
 
